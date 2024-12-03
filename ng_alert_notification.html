@@ -175,7 +175,7 @@
         </tbody>
       </table>
     </div>
-<!--     {{ __dangerouslyInjectHTML `<!--[if mso | IE]></td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->` }}
+    {{ __dangerouslyInjectHTML `<!--[if mso | IE]></td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->` }}
     <div style="margin:0px auto;max-width:600px;">
       <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
         <tbody>
@@ -217,7 +217,7 @@
           </tr>
         </tbody>
       </table>
-    </div> -->
+    </div>
     {{ __dangerouslyInjectHTML `<!--[if mso | IE]></td></tr></table><![endif]-->` }}
     {{ if .Message }}
     {{ __dangerouslyInjectHTML `<!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="background-outlook" role="presentation" style="width:600px;" width="600" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->` }}
@@ -568,7 +568,17 @@
                               <tr>
                                 <td align="left" class="txt" style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                   <table cellpadding="0" cellspacing="0" width="100%" border="0" style="color:#000000;font-family:Inter, Helvetica, Arial;font-size:13px;line-height:22px;table-layout:auto;width:100%;border:none;">
+                                    <tr>
+                                      <td>Instance Name:</td><td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Instance Id:</td><td>{{.Labels.InstanceId}}</td>
+                                    </tr>
+                                    <tr>
+                                      <td>{{.Labels.alertname}}:</td><td>{{$value}}</td>
+                                    </tr>
                                     <mj-raw>{{ range .Labels.SortedPairs }}</mj-raw>
+        
                                     <tr>
                                       <td>
                                         <strong>{{ .Name }}</strong>
@@ -1102,7 +1112,7 @@
                   </tbody>
                 </table>
               </div>
-<!--               {{ __dangerouslyInjectHTML `<!--[if mso | IE]></td></tr></table></td></tr><tr><td class="border-top-outlook" width="600px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="border-top-outlook" role="presentation" style="width:600px;" width="600" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->` }}
+              {{ __dangerouslyInjectHTML `<!--[if mso | IE]></td></tr></table></td></tr><tr><td class="border-top-outlook" width="600px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="border-top-outlook" role="presentation" style="width:600px;" width="600" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->` }}
               <div class="border-top" style="border-top: 1px solid #e4e5e6; margin: 0px auto; max-width: 600px;">
                 <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
                   <tbody>
@@ -1203,7 +1213,7 @@
                     </tr>
                   </tbody>
                 </table>
-              </div> -->
+              </div>
               {{ __dangerouslyInjectHTML `<!--[if mso | IE]></td></tr></table></td></tr><tr><td class="border-top-outlook" width="600px" ><table align="center" border="0" cellpadding="0" cellspacing="0" class="border-top-outlook" role="presentation" style="width:600px;" width="600" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->` }}
               <div class="border-top" style="border-top: 1px solid #e4e5e6; margin: 0px auto; max-width: 600px;">
                 <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
